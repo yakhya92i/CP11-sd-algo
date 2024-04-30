@@ -1,0 +1,55 @@
+// Testez et essayez les schémas interactifs de chaque structure de données et algorithmes de tri
+
+const MergeSort = (list) => {
+    if (list.length <= 1) return list;
+    const middle = list.length / 2;
+    const left = list.slice(0, middle);
+    const right = list.slice(middle, list.length);
+    return merge(mergeSort(left), mergeSort(right));
+  }
+  
+  const Merge = (left, right) => {
+    var result = [];
+    while(left.length || right.length) {
+      if(left.length && right.length) {
+        if(left[0] < right[0]) {
+          result.push(left.shift())
+        } else {
+          result.push(right.shift())
+        }
+      } else if(left.length) {
+          result.push(left.shift())
+        } else {
+          result.push(right.shift())
+        }
+      }
+    return result;
+  }
+  
+  // Listez le nom des structures de données et des algorithmes de tri que vous ne connaissez pas encore et pourquoi vous ne les maîtrisez toujours pas.
+  
+  const mergeSort = (list) => {
+    if (list.length <= 1) return list;
+    const middle = list.length / 2;
+    const left = list.slice(0, middle);
+    const right = list.slice(middle, list.length);
+    return merge(mergeSort(left), mergeSort(right));
+  }
+  
+  const merge = (left, right) => {
+    var result = [];
+    while(left.length || right.length) {
+      if(left.length && right.length) {
+        if(left[0] < right[0]) {
+          result.push(left.shift())
+        } else {
+          result.push(right.shift())
+        }
+      } else if(left.length) {
+          result.push(left.shift())
+        } else {
+          result.push(right.shift())
+        }
+      }
+    return result;
+  }  
